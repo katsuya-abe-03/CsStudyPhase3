@@ -1,0 +1,16 @@
+C:\CsStudy\Phase3App\Phase3App\bin\Debug\Phase3App.exe.config
+C:\CsStudy\Phase3App\Phase3App\bin\Debug\Phase3App.exe
+C:\CsStudy\Phase3App\Phase3App\bin\Debug\Phase3App.pdb
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\MainWindow.g.cs
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\App.g.cs
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App_MarkupCompile.cache
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App_MarkupCompile.lref
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\MainWindow.baml
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.g.resources
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.Properties.Resources.resources
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.csproj.GenerateResource.cache
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.csproj.CoreCompileInputs.cache
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.exe
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.pdb
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\CsStudy\Phase3App\Phase3App\obj\Debug\Phase3App.csprojAssemblyReference.cache

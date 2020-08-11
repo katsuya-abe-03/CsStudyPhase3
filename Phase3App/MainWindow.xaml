@@ -1,0 +1,83 @@
+﻿<Window x:Class="Phase3App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Phase3App"
+        mc:Ignorable="d"
+        Title="フェーズ3アプリ" Height="320" Width="560">
+    <Window.Resources>
+        <!--ここ大切 -->
+        <local:SolidColorBrushConverter x:Key="ColorConv"/>
+        <!--       <local:ColorConverter x:Key="ColorConv"/> -->
+        <Style TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="20,20,0,0" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="20,20,0,0" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightBlue" />
+                </Trigger>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="LightPink" />
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+        <Style TargetType="Slider">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="20,20,0,0" />
+            <Setter Property="Width" Value="320" />
+            <Setter Property="IsSnapToTickEnabled" Value="True" />
+            <Setter Property="TickPlacement" Value="TopLeft" />
+            <Setter Property="SmallChange" Value="1" />
+            <Setter Property="Maximum" Value="255" />
+            <Setter Property="Minimum" Value="0" />
+            <Setter Property="Value" Value="0" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" Margin="0">
+            <Label Content="Color Red:"/>
+            <TextBox x:Name="txtRed" Text="{Binding Value, ElementName=SldRed, Mode=TwoWay}"/>
+            <Slider x:Name="SldRed"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" Margin="0">
+            <Label Content="Color Green:"/>
+            <TextBox x:Name="txtGreen" Text="{Binding Value, ElementName=SldGreen, Mode=TwoWay}"/>
+            <Slider x:Name="SldGreen" Value="240"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50" Margin="0">
+            <Label Content="Color Blue:"/>
+            <TextBox x:Name="txtBlue" Text="{Binding Value, ElementName=SldBlue, Mode=TwoWay}"/>
+            <Slider x:Name="SldBlue"/>
+        </StackPanel>
+        <Rectangle x:Name="rectColor" HorizontalAlignment="Left" Height="80" Margin="20,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="500">
+            <Rectangle.Fill>
+                <!--Colorを受ける時のやり方。こちらでも大丈夫
+                <SolidColorBrush>
+                <SolidColorBrush.Color>-->
+                <MultiBinding Converter="{StaticResource ColorConv}">
+                    <MultiBinding.Bindings>
+                        <Binding Path="Value" ElementName="SldRed"/>
+                        <Binding Path="Value" ElementName="SldGreen" />
+                        <Binding Path="Value" ElementName="SldBlue" />
+                    </MultiBinding.Bindings>
+                </MultiBinding>
+                <!--             </SolidColorBrush.Color>
+                </SolidColorBrush>-->
+            </Rectangle.Fill>
+        </Rectangle>
+    </StackPanel>
+</Window>
